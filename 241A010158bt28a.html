@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Game kiểm tra tốc độ phản xạ với nhiều loại mục tiêu và hệ thống lên cấp."
+    />
+    <title>Bắt mục tiêu — Thử thách phản xạ nâng cao</title>
+    <link rel="stylesheet" href="style-bt28a.css" />
+    <script src="script-bt28a.js" defer></script>
+  </head>
+  <body class="enhanced-page">
+    <main class="game">
+      <header class="game__header">
+        <p class="eyebrow">THỬ THÁCH PHẢN XẠ · PHIÊN BẢN NÂNG CAO</p>
+        <h1>Bắt mục tiêu</h1>
+        <p class="intro">
+          Chọn mục tiêu xanh, tránh bẫy đỏ và bắt thưởng vàng trước khi biến mất.
+        </p>
+      </header>
+
+      <section class="scoreboard" aria-label="Thông tin trò chơi">
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Điểm</span>
+          <span class="scoreboard__value" id="score" aria-live="polite">0</span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Mạng</span>
+          <span class="scoreboard__value scoreboard__value--lives" id="lives">
+            ♥ ♥ ♥
+          </span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Cấp độ</span>
+          <span class="scoreboard__value" id="level">1</span>
+        </div>
+        <div class="scoreboard__item scoreboard__item--time">
+          <span class="scoreboard__label">Thời gian</span>
+          <span class="scoreboard__value" id="timer" role="timer">30 giây</span>
+          <span class="timer-track" aria-hidden="true">
+            <span id="timer-bar" class="timer-track__fill"></span>
+          </span>
+        </div>
+      </section>
+
+      <div class="game-meta">
+        <span>🏆 Kỷ lục: <strong id="high-score">0</strong></span>
+        <span>Chạm vùng trống sẽ khóa thao tác 0,5 giây.</span>
+      </div>
+
+      <div
+        id="arena"
+        class="arena"
+        role="group"
+        aria-label="Khu vực chơi. Bắt mục tiêu xanh và vàng, tránh mục tiêu đỏ."
+      >
+        <p id="arena-message" class="arena__message">
+          Sẵn sàng thử thách phản xạ?
+        </p>
+        <p id="penalty-message" class="penalty-message" aria-live="polite"></p>
+      </div>
+
+      <div class="legend" aria-label="Phân loại mục tiêu">
+        <span class="legend__item"><i class="legend__dot legend__dot--green"></i>Thường: +1 điểm</span>
+        <span class="legend__item"><i class="legend__dot legend__dot--red"></i>Bẫy: −1 mạng</span>
+        <span class="legend__item"><i class="legend__dot legend__dot--gold"></i>Thưởng: +3 điểm, +2 giây</span>
+      </div>
+
+      <div class="game__controls">
+        <button id="start-button" class="button button--primary" type="button">
+          Bắt đầu trò chơi
+        </button>
+        <button id="end-button" class="button button--secondary" type="button" disabled>
+          Kết thúc
+        </button>
+        <p id="game-status" class="game-status" aria-live="polite">
+          Có 30 giây và 3 mạng. Đạt 10 điểm để lên cấp.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
