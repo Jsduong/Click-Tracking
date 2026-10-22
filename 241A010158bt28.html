@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trò chơi kiểm tra tốc độ phản xạ click chuột."
+    />
+    <title>Kiểm tra tốc độ phản xạ</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="game__header">
+        <p class="eyebrow">THỬ THÁCH PHẢN XẠ</p>
+        <h1>Bắt mục tiêu</h1>
+        <p class="intro">Click vào hình tròn càng nhanh càng tốt!</p>
+      </header>
+
+      <section class="scoreboard" aria-label="Thông tin trò chơi">
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Điểm</span>
+          <span class="scoreboard__value" id="score" aria-live="polite">0</span>
+        </div>
+        <div class="scoreboard__item scoreboard__item--time">
+          <span class="scoreboard__label">Thời gian</span>
+          <span class="scoreboard__value" id="timer" role="timer">30 giây</span>
+        </div>
+      </section>
+
+      <div
+        id="arena"
+        class="arena"
+        role="group"
+        aria-label="Khu vực chơi. Click vào mục tiêu màu hồng."
+      >
+        <span id="target" class="target" aria-label="Mục tiêu"></span>
+        <p id="arena-message" class="arena__message">Sẵn sàng chưa?</p>
+      </div>
+
+      <div class="game__controls">
+        <button id="start-button" class="start-button" type="button">
+          Bắt đầu trò chơi
+        </button>
+        <p id="game-status" class="game-status" aria-live="polite">
+          Bạn có 30 giây để ghi điểm.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
