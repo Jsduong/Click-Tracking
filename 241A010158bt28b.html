@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bài tập 28b: game phản xạ có bộ đếm thời gian tùy chọn và đổi màu nền."
+    />
+    <title>Bắt mục tiêu — Bài tập 28b</title>
+    <link rel="stylesheet" href="style-bt28b.css" />
+    <script src="script-bt28b.js" defer></script>
+  </head>
+  <body class="game-page">
+    <main class="game">
+      <nav class="top-nav" aria-label="Điều hướng">
+        <a href="index.html">← Trang chủ</a>
+        <button id="player-button" class="text-button" type="button">Người chơi</button>
+      </nav>
+
+      <header class="game__header">
+        <p class="eyebrow">THỬ THÁCH PHẢN XẠ · BÀI TẬP 28B</p>
+        <h1>Bắt mục tiêu</h1>
+        <p class="intro">Bắt mục tiêu xanh, né bẫy đỏ và đừng bỏ lỡ mục tiêu vàng.</p>
+        <p id="player-info" class="player-info" aria-live="polite" hidden></p>
+      </header>
+
+      <section class="scoreboard" aria-label="Thông tin trò chơi">
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Điểm</span>
+          <span class="scoreboard__value" id="score" aria-live="polite">0</span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Mạng</span>
+          <span class="scoreboard__value scoreboard__value--lives" id="lives">♥ ♥ ♥</span>
+        </div>
+        <div class="scoreboard__item">
+          <span class="scoreboard__label">Cấp độ</span>
+          <span class="scoreboard__value" id="level">1</span>
+        </div>
+        <div class="scoreboard__item scoreboard__item--time">
+          <span class="scoreboard__label">Thời gian</span>
+          <span class="scoreboard__value" id="timer" role="timer">30 giây</span>
+          <span class="timer-track" aria-hidden="true">
+            <span id="timer-bar" class="timer-track__fill"></span>
+          </span>
+        </div>
+      </section>
+
+      <section class="settings" aria-label="Tùy chọn trò chơi">
+        <label class="duration-control" for="duration-input">
+          Thời lượng
+          <span class="duration-control__input">
+            <input
+              id="duration-input"
+              type="number"
+              min="5"
+              max="300"
+              step="1"
+              value="30"
+              inputmode="numeric"
+              aria-describedby="duration-help"
+            />
+            <span>giây</span>
+          </span>
+        </label>
+        <p id="duration-help" class="settings__hint">Chọn từ 5 đến 300 giây trước khi bắt đầu.</p>
+        <button id="background-button" class="button button--theme" type="button">
+          Đổi màu nền ngẫu nhiên
+        </button>
+      </section>
+
+      <div class="game-meta">
+        <span>🏆 Kỷ lục: <strong id="high-score">0</strong></span>
+        <span>Click vùng trống sẽ khóa thao tác 0,5 giây.</span>
+      </div>
+
+      <div
+        id="arena"
+        class="arena"
+        role="group"
+        aria-label="Khu vực chơi. Bắt mục tiêu xanh và vàng, tránh mục tiêu đỏ."
+      >
+        <p id="arena-message" class="arena__message">Sẵn sàng thử thách phản xạ?</p>
+        <p id="penalty-message" class="penalty-message" aria-live="polite"></p>
+      </div>
+
+      <div class="legend" aria-label="Phân loại mục tiêu">
+        <span class="legend__item"><i class="legend__dot legend__dot--green"></i>Thường: +1 điểm</span>
+        <span class="legend__item"><i class="legend__dot legend__dot--red"></i>Bẫy: −1 mạng</span>
+        <span class="legend__item"><i class="legend__dot legend__dot--gold"></i>Thưởng: +3 điểm, +2 giây</span>
+      </div>
+
+      <div class="game__controls">
+        <button id="start-button" class="button button--primary" type="button">
+          Bắt đầu trò chơi
+        </button>
+        <button id="end-button" class="button button--secondary" type="button" disabled>
+          Kết thúc
+        </button>
+        <p id="game-status" class="game-status" aria-live="polite">
+          Có 30 giây và 3 mạng. Đạt 10 điểm để lên cấp.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
