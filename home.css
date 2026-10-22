@@ -77,6 +77,26 @@ body {
   line-height: 1.6;
 }
 
+.profile__result {
+  width: min(100%, 250px);
+  margin: 20px auto 0;
+}
+
+.profile__result img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgb(38 38 75 / 9%);
+}
+
+.profile__result figcaption {
+  margin-top: 7px;
+  color: #88889b;
+  font-size: 0.72rem;
+}
+
 .projects {
   padding: 27px;
   border: 1px solid #e8e8f1;
